@@ -1,0 +1,183 @@
+/* Кастомный CSS для Video.js */
+
+/* Кастомная тема для VideoJS в соответствии с дизайном сайта */
+.video-js {
+  /* Базовые настройки размеров */
+  width: 100% !important;
+  height: auto !important;
+  
+  /* Поддержка различных соотношений сторон */
+  position: relative;
+  
+  /* Тень для плеера */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  
+  /* Уберем предзагрузочный фон */
+  background: transparent;
+}
+
+/* Базовое соотношение по умолчанию (16:9) */
+.video-js.vjs-16-9 {
+  aspect-ratio: 16/9;
+}
+
+/* Широкоформатное соотношение (21:9) */
+.video-js.vjs-21-9 {
+  aspect-ratio: 21/9;
+}
+
+/* Квадратное соотношение (1:1) */
+.video-js.vjs-1-1 {
+  aspect-ratio: 1/1;
+}
+
+/* Вертикальное видео (9:16) */
+.video-js.vjs-9-16 {
+  aspect-ratio: 9/16;
+}
+
+/* Другие распространенные соотношения */
+.video-js.vjs-4-3 {
+  aspect-ratio: 4/3;
+}
+
+/* Настройка элементов управления */
+.video-js .vjs-control-bar {
+  /* Настройка панели управления для темной темы */
+  background-color: rgba(38, 41, 47, 0.8);
+
+  height: 30px; /* Высота панели управления */
+}
+
+/* Для светлой темы */
+body.light-theme .video-js .vjs-control-bar {
+  background-color: rgba(245, 245, 245, 0.9);
+}
+
+/* Кнопки управления */
+.video-js .vjs-button {
+  color: #fff;
+}
+
+body.light-theme .video-js .vjs-button {
+  color: #333;
+}
+
+/* Полоса прогресса */
+.video-js .vjs-play-progress {
+  background-color: #447BBA; /* Цвет акцента сайта */
+}
+
+.video-js .vjs-load-progress {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+body.light-theme .video-js .vjs-load-progress {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+/* Стиль слайдера громкости */
+.video-js .vjs-volume-level {
+  background-color: #447BBA;
+}
+
+/* Время */
+.video-js .vjs-time-control {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 10px;
+}
+
+/* Измененный постер (превью) */
+.video-js .vjs-poster {
+  background-size: cover;
+  border-radius: 10px;
+}
+
+/* Кнопка воспроизведения в центре */
+.video-js .vjs-big-play-button {
+  background-color: rgba(68, 123, 186, 0.8); /* Акцентный цвет с прозрачностью */
+  border: none;
+  border-radius: 50%;
+  width: 68px;
+  height: 68px;
+  line-height: 68px;
+  font-size: 34px;
+  
+  /* Центрировать кнопку */
+  top: 50%;
+  left: 50%;
+  margin-top: -34px;
+  margin-left: -34px;
+  
+  /* Добавляем тень для лучшей видимости */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  
+  /* Плавное появление/исчезновение */
+  transition: all 0.3s ease;
+}
+
+/* Эффект наведения на большую кнопку воспроизведения */
+.video-js:hover .vjs-big-play-button {
+  background-color: rgba(68, 123, 186, 1);
+  transform: scale(1.05);
+}
+
+/* Полноэкранный режим */
+.video-js.vjs-fullscreen {
+  border-radius: 0;
+}
+
+/* Настройка текста (например, для субтитров) */
+.video-js .vjs-text-track-display {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+/* Внешний вид загрузки для темной темы */
+.vjs-loading-spinner {
+  border: 3px solid rgba(68, 123, 186, 0.25);
+}
+
+.vjs-loading-spinner:before,
+.vjs-loading-spinner:after {
+  border: inherit;
+}
+
+.vjs-loading-spinner:before {
+  border-top-color: #447BBA;
+}
+
+/* Изменение цвета иконок при наведении */
+.video-js .vjs-control:focus:before,
+.video-js .vjs-control:hover:before {
+  text-shadow: 0 0 1em #fff;
+}
+
+body.light-theme .video-js .vjs-control:focus:before,
+body.light-theme .video-js .vjs-control:hover:before {
+  text-shadow: 0 0 1em #333;
+}
+
+/* Улучшенный tooltip при наведении */
+.video-js .vjs-menu-button-popup .vjs-menu .vjs-menu-content {
+  background-color: rgba(38, 41, 47, 0.9);
+  border-radius: 4px;
+}
+
+body.light-theme .video-js .vjs-menu-button-popup .vjs-menu .vjs-menu-content {
+  background-color: rgba(245, 245, 245, 0.9);
+  color: #333;
+}
+
+/* Скрываем элементы управления, когда видео не на паузе и нет наведения */
+.video-js.vjs-user-inactive.vjs-playing .vjs-control-bar {
+  opacity: 0;
+  transform: translateY(100%);
+  transition: all 0.3s ease;
+}
+
+/* Показываем элементы управления при наведении */
+.video-js.vjs-user-active .vjs-control-bar,
+.video-js.vjs-paused .vjs-control-bar {
+  opacity: 1;
+  transform: translateY(0);
+}
