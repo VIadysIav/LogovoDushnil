@@ -1392,7 +1392,7 @@ body.light-theme .mod-tag {
     }
     
     .logo svg {
-        height: 35px; /* Уменьшаем размер логотипа */
+        height: 50px; /* Уменьшаем размер логотипа */
         width: auto;
     }
     
